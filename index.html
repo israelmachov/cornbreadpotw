@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>🌽🍞 POTW – Week 11 (Mobile)</title>
+<style>
+  :root{
+    --bg:#fff; --fg:#111; --muted:#666; --line:#e5e5e5; --pill:#f7f7f7; --accent:#111;
+    --radius:16px; --shadow:0 1px 2px rgba(0,0,0,.06);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
+  .wrap{max-width:720px;margin:0 auto;padding:0 16px}
+  header.sticky{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:saturate(150%) blur(6px);border-bottom:1px solid var(--line)}
+  header .row{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+  header h1{font-size:16px;margin:0;font-weight:700}
+  header .meta{font-size:12px;color:var(--muted)}
+  .card{border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;background:#fff}
+  .stack{display:grid;gap:16px}
+  .pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;background:var(--pill);padding:4px 10px;font-size:12px;font-weight:600;color:var(--fg)}
+  .row-between{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .muted{color:var(--muted)}
+  .title{font-weight:700;font-size:15px}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .kv{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .bar{height:8px;background:#f1f1f1;border-radius:999px;overflow:hidden;min-width:120px}
+  .bar > i{display:block;height:100%;width:0;background:var(--accent);border-radius:999px;transition:width .8s cubic-bezier(.2,.7,.2,1)}
+  table{width:100%;border-collapse:collapse}
+  th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+  th{font-size:12px;font-weight:700}
+  td{font-size:13px}
+  .small{font-size:12px}
+  .weight-row{display:grid;grid-template-columns:5fr 6fr 1fr;align-items:center;gap:10px}
+  .weight-row .label{font-weight:600}
+  .weight-row .label span{color:var(--muted);font-weight:500}
+  .weight-row .bar{height:8px}
+  footer{padding:40px 0 72px;text-align:center;color:var(--muted);font-size:12px}
+  .section-title{font-size:13px;font-weight:700;color:#222;margin:12px 0 6px}
+  .recommend{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
+  .recommend .call{font-weight:700}
+  /* compact on wide screens */
+  @media (min-width:720px){ .grid-2{grid-template-columns:1fr 1fr} }
+</style>
+</head>
+<body>
+  <header class="sticky">
+    <div class="wrap row">
+      <h1>🌽🍞 POTW – Week 11</h1>
+      <div class="meta">Noon Games • Nov 8, 2025</div>
+    </div>
+  </header>
+
+  <main class="wrap stack" style="padding:16px 0 24px">
+    <!-- Executive Summary -->
+    <section class="card">
+      <div class="row-between">
+        <h2 class="title">Executive Summary</h2>
+        <span class="pill">Mobile • Responsive</span>
+      </div>
+      <div style="margin-top:10px;border-top:1px solid var(--line)"></div>
+      <div class="stack" style="margin-top:10px">
+        <!-- summary rows -->
+        <div class="stack" id="summary-list"></div>
+      </div>
+    </section>
+
+    <!-- Matchup Cards -->
+    <section class="card" id="game-uga"></section>
+    <section class="card" id="game-wvu"></section>
+    <section class="card" id="game-byu"></section>
+
+    <!-- Framework legend -->
+    <section class="card">
+      <h3 class="title">Cornbread Framework Weights</h3>
+      <div class="stack" style="margin-top:10px" id="weights"></div>
+    </section>
+
+    <footer>Week 11 • Nov 8, 2025 • See You @ the Window!</footer>
+  </main>
+
+<script>
+/* ---------- Data (new numbers) ---------- */
+const GAMES = [
+  {
+    id:"uga",
+    title:"Georgia @ Mississippi State",
+    kickoff:"Sat, Nov 8 • 12:00 PM ET",
+    pickTag:"🌽🍞 POTW",
+    model:{ predicted:"Georgia 31 – Miss St 14", marketLine:"UGA -14", modelLine:"UGA -17 (Edge +3)", total:"48 (Lean Under 53)", confidence:82, score:86 },
+    market:{ spread:"UGA -14", total:"53" },
+    core:[
+      {k:"YPP (Offense)", a:"6.7", b:"5.4", note:"+1.3 YPP advantage"},
+      {k:"Points / Game", a:"31.8", b:"19.6", note:"Scoring edge"},
+      {k:"Points Allowed / Game", a:"14.2", b:"26.4", note:"Top-15 scoring D"},
+      {k:"3rd Down %", a:"46.1%", b:"37.5%", note:"Sustain drives"},
+      {k:"Opp 3rd Down %", a:"31.9%", b:"42.6%", note:"Get off field"},
+      {k:"RZ TD % (Off)", a:"72.0%", b:"58.0%", note:"Finish drives"},
+      {k:"RZ TD % (Def)", a:"51.0%", b:"68.5%", note:"Red-zone D edge"},
+      {k:"Turnover Margin", a:"+0.5", b:"-0.3", note:"Cleaner team"},
+      {k:"Penalty Yards", a:"45.8", b:"65.9", note:"Hidden yards"}
+    ],
+    derived:[
+      {k:"Efficiency Diff (YPP Off − Def Allow)", a:"+1.3", b:"-0.6", note:"UGA +1.9 YPP edge"},
+      {k:"Explosiveness (20+ yd plays / g)", a:"6.8", b:"4.7", note:"More chunk plays"},
+      {k:"Red Zone Index (O − D)", a:"+21 pts", b:"-10 pts", note:"Major gap"},
+      {k:"3rd Down Swing (Off − Def Allowed)", a:"+14.2 pts", b:"-5.1 pts", note:"Possession edge"},
+      {k:"Discipline Index (σ)", a:"+0.8σ", b:"-0.9σ", note:"Much cleaner"},
+      {k:"Havoc Differential", a:"+6.1%", b:"-2.8%", note:"More disruption"}
+    ],
+    framework:[
+      {name:"Off Efficiency", w:25, s:89},
+      {name:"Def Efficiency", w:25, s:91},
+      {name:"Discipline", w:15, s:92},
+      {name:"Context", w:10, s:78},
+      {name:"Market", w:10, s:80},
+      {name:"Player Impact", w:10, s:74},
+    ],
+    rec:"Play: Georgia -14 | Lean Under 53"
+  },
+  {
+    id:"wvu",
+    title:"West Virginia vs Colorado",
+    kickoff:"Sat, Nov 8 • 12:00 PM ET",
+    model:{ predicted:"WVU 28 – Colorado 20", marketLine:"WVU -6.5", modelLine:"WVU -8.3 (Edge +1.8)", total:"52 (Lean Under 56.5)", confidence:79, score:79 },
+    market:{ spread:"WVU -6.5", total:"56.5" },
+    core:[
+      {k:"YPP (Offense)", a:"6.1", b:"5.3", note:"+0.8 YPP advantage"},
+      {k:"Points / Game", a:"29.2", b:"23.7", note:"Scoring edge"},
+      {k:"Points Allowed / Game", a:"20.4", b:"29.6", note:"Defensive edge"},
+      {k:"3rd Down %", a:"45.8%", b:"37.1%", note:"Sustain drives"},
+      {k:"Opp 3rd Down %", a:"33.9%", b:"42.9%", note:"Stops"},
+      {k:"RZ TD % (Off)", a:"68.9%", b:"58.4%", note:"Finish drives"},
+      {k:"RZ TD % (Def)", a:"53.2%", b:"66.5%", note:"Goal line D"},
+      {k:"Turnover Margin", a:"+0.4", b:"-0.7", note:"Cleaner"},
+      {k:"Penalty Yards", a:"51.0", b:"67.8", note:"Hidden yards"}
+    ],
+    derived:[
+      {k:"Efficiency Diff (YPP Off − Def Allow)", a:"+0.8", b:"-0.5", note:"WVU +1.3 YPP"},
+      {k:"EPA Differential (Off − Def)", a:"+0.07", b:"-0.09", note:"Per snap edge"},
+      {k:"Red Zone Index (O − D)", a:"+16 pts", b:"-8 pts", note:"Finish + prevent"},
+      {k:"3rd Down Swing", a:"+11.9 pts", b:"-5.8 pts", note:"Extend vs stall"},
+      {k:"Discipline Index (σ)", a:"+1.1σ", b:"-0.8σ", note:"Cleaner & steadier"},
+      {k:"Havoc Differential", a:"+6.5%", b:"-3.1%", note:"More pressure"}
+    ],
+    framework:[
+      {name:"Off Efficiency", w:25, s:83},
+      {name:"Def Efficiency", w:25, s:88},
+      {name:"Discipline", w:15, s:90},
+      {name:"Context", w:10, s:82},
+      {name:"Market", w:10, s:76},
+      {name:"Player Impact", w:10, s:74},
+    ],
+    rec:"Play: WVU -6.5 | Lean Under 56.5"
+  },
+  {
+    id:"byu",
+    title:"BYU @ Texas Tech",
+    kickoff:"Sat, Nov 8 • 12:00 PM ET",
+    model:{ predicted:"Texas Tech 34 – BYU 27", marketLine:"TTU -9.5", modelLine:"TTU -7 (Value BYU +2.5)", total:"61 (Lean Over 53.5)", confidence:72, score:68 },
+    market:{ spread:"TTU -9.5", total:"53.5" },
+    core:[
+      {k:"YPP (Offense)", a:"6.0", b:"6.5", note:"TTU slight edge"},
+      {k:"Points / Game", a:"31.2", b:"36.8", note:"Tempo-driven scoring"},
+      {k:"Points Allowed / Game", a:"20.9", b:"24.6", note:"BYU stingier D"},
+      {k:"3rd Down %", a:"43.1%", b:"46.9%", note:"Even sustain"},
+      {k:"Opp 3rd Down %", a:"37.5%", b:"40.2%", note:"Comparable stops"},
+      {k:"RZ TD % (Off)", a:"65.8%", b:"70.4%", note:"TTU better RZ"},
+      {k:"RZ TD % (Def)", a:"55.1%", b:"59.3%", note:"BYU better prevent"},
+      {k:"Turnover Margin", a:"+0.3", b:"+0.5", note:"Both careful"},
+      {k:"Penalty Yards", a:"48.9", b:"52.3", note:"Comparable discipline"}
+    ],
+    derived:[
+      {k:"Efficiency Diff (YPP Off − Def Allow)", a:"+0.8", b:"+1.2", note:"TTU +0.4 YPP"},
+      {k:"EPA Differential (Off − Def)", a:"+0.10", b:"+0.18", note:"TTU slightly higher"},
+      {k:"Red Zone Index (O − D)", a:"+10 pts", b:"+11 pts", note:"Essentially even"},
+      {k:"3rd Down Swing", a:"+5.6 pts", b:"+6.7 pts", note:"TTU marginal"},
+      {k:"Discipline Index (σ)", a:"+0.3σ", b:"+0.5σ", note:"TTU marginally cleaner"},
+      {k:"Havoc Differential", a:"+4.2%", b:"+5.0%", note:"Balanced aggression"}
+    ],
+    framework:[
+      {name:"Off Efficiency", w:25, s:80},
+      {name:"Def Efficiency", w:25, s:78},
+      {name:"Discipline", w:15, s:75},
+      {name:"Context", w:10, s:72},
+      {name:"Market", w:10, s:77},
+      {name:"Player Impact", w:10, s:70},
+    ],
+    rec:"Play: BYU +9.5 | Lean Over 53.5"
+  }
+];
+
+const WEIGHTS = [
+  {name:"Model Edge", w:25, s:100},
+  {name:"Confidence", w:20, s:100},
+  {name:"Efficiency / EPA", w:20, s:100},
+  {name:"Discipline", w:15, s:100},
+  {name:"Market Alignment", w:10, s:100},
+  {name:"Context", w:10, s:100},
+];
+
+/* ---------- Helpers ---------- */
+const el = (sel, ctx=document)=>ctx.querySelector(sel);
+const make = (tag, cls, html)=>{ const n=document.createElement(tag); if(cls) n.className=cls; if(html) n.innerHTML=html; return n; };
+
+function bar(value){
+  const wrap=make('div','bar'); const fill=make('i'); fill.style.width='0%'; wrap.appendChild(fill);
+  requestAnimationFrame(()=>{ fill.style.width=Math.max(0,Math.min(+value||0,100))+'%'; });
+  return wrap;
+}
+
+function summaryRow(g){
+  const row=make('div','stack');
+  const top=make('div','row-between');
+  top.append(
+    make('div','title',g.title),
+    (()=>{ const box=make('div'); box.style.display='flex'; box.style.gap='8px';
+      if(g.pickTag) box.append(make('span','pill',g.pickTag));
+      box.append(make('span','pill','Score '+g.model.score));
+      return box; })()
+  );
+  const grid=make('div','grid-2 small');
+  grid.append(
+    make('div','kv small','<span class="muted">Confidence</span><span><b>'+g.model.confidence+'</b>/100</span>'),
+    make('div','kv small','<span class="muted">Model Edge</span><span>'+g.model.modelLine+'</span>'),
+    make('div','kv small','<span class="muted">Market</span><span>'+g.market.spread+' • O/U '+g.market.total+'</span>'),
+    make('div','kv small','<span class="muted">Predicted</span><span><b>'+g.model.predicted+'</b></span>')
+  );
+  row.append(top, grid);
+  return row;
+}
+
+function tableFrom(rows, headings){
+  const tbl=make('table'); const thead=make('thead'); const tr=make('tr');
+  headings.forEach(h=>{ const th=make('th',null,h); tr.append(th); }); thead.append(tr); tbl.append(thead);
+  const tb=make('tbody');
+  rows.forEach(r=>{
+    const tr=make('tr');
+    [r.k, r.a, r.b, r.note].forEach((v,i)=>{
+      const td=make('td'); td.textContent=v; tr.append(td);
+    });
+    tb.append(tr);
+  });
+  tbl.append(tb);
+  return tbl;
+}
+
+function frameworkRows(items){
+  const wrap=make('div','stack');
+  items.forEach(i=>{
+    const row=make('div','weight-row');
+    const lab=make('div','label',`${i.name} <span>(${i.w}%)</span>`);
+    const b=bar(i.s);
+    const val=make('div','small',i.s);
+    val.style.textAlign='right';
+    row.append(lab,b,val);
+    wrap.append(row);
+  });
+  return wrap;
+}
+
+function buildGameCard(g){
+  const root=make('div','stack');
+  // header
+  const header=make('div','row-between');
+  const left=make('div','title',g.title);
+  const right=make('div'); right.style.display='flex'; right.style.gap='8px';
+  if(g.pickTag) right.append(make('span','pill',g.pickTag));
+  right.append(make('span','pill','Score '+g.model.score));
+  header.append(left,right);
+  root.append(header);
+  root.append(make('div','muted small',g.kickoff));
+
+  // model summary
+  const sum=make('div','stack');
+  sum.append(
+    make('div','kv','<span class="muted">Predicted</span><span><b>'+g.model.predicted+'</b></span>'),
+    make('div','kv','<span class="muted">Model Line</span><span>'+g.model.modelLine+'</span>'),
+    make('div','kv','<span class="muted">Market</span><span>'+g.market.spread+' • O/U '+g.market.total+'</span>')
+  );
+  const conf=make('div','kv'); conf.append(make('span','muted','Confidence'), bar(g.model.confidence));
+  sum.append(conf);
+  root.append(sum);
+
+  // core table
+  root.append(make('div','section-title','Core Team Data (per game)'));
+  const coreHead=["Metric", g.title.split(" ")[0], (g.title.includes("@")? g.title.split(" @ ")[1] : g.title.split(" vs ")[1]), "Insight"];
+  root.append(tableFrom(g.core, coreHead));
+
+  // derived table
+  root.append(make('div','section-title','Derived Metrics'));
+  root.append(tableFrom(g.derived, coreHead));
+
+  // framework
+  root.append(make('div','section-title','Framework Breakdown'));
+  root.append(frameworkRows(g.framework));
+
+  // recommendation
+  const rec=make('div','recommend');
+  rec.append(make('div','call','Recommendation: '+g.rec), make('span','pill',g.model.confidence+'/100'));
+  root.append(rec);
+
+  return root;
+}
+
+/* ---------- Render ---------- */
+const sList = el('#summary-list');
+GAMES.forEach(g => sList.append(summaryRow(g)));
+
+const mount = (id,g) => el(id).append(buildGameCard(g));
+mount('#game-uga', GAMES[0]);
+mount('#game-wvu', GAMES[1]);
+mount('#game-byu', GAMES[2]);
+
+/* weights */
+const wWrap = el('#weights');
+WEIGHTS.forEach(w=>{
+  const row=document.createElement('div'); row.className='weight-row';
+  row.append(
+    (()=>{const d=make('div','label'); d.innerHTML = `${w.name} <span>(${w.w}%)</span>`; return d;})(),
+    bar(w.s),
+    (()=>{const d=make('div','small'); d.style.textAlign='right'; d.textContent = w.s; return d;})()
+  );
+  wWrap.append(row);
+});
+</script>
+</body>
+</html>
