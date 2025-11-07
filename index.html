@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cornbread — Noon Slate</title>
+  <title>Cornbread — Noon Slate (Updated)</title>
 
   <!-- Bootstrap 5 -->
   <link
@@ -12,91 +12,40 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous"
   />
-
   <!-- Roboto / Open Sans -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --cb-bg: #FAFAFA;
-      --cb-card: #FFFFFF;
-      --cb-text: #2C2C2C;
-      --cb-divider: #DADADA;
-      --cb-gold: #E2B400;
-      --cb-green: #3BAA5C;
-      --cb-red: #C04848;
-      --cb-muted: #6B7280;
-      --cb-shadow: 0 6px 18px rgba(0,0,0,.06);
-      --cb-rounded: 18px;
+      --cb-bg:#FAFAFA; --cb-card:#FFFFFF; --cb-text:#2C2C2C;
+      --cb-divider:#DADADA; --cb-gold:#E2B400; --cb-green:#3BAA5C; --cb-red:#C04848;
+      --cb-muted:#6B7280; --cb-shadow:0 6px 18px rgba(0,0,0,.06); --cb-rounded:18px;
     }
     [data-bs-theme="dark"]{
-      --cb-bg: #121212;
-      --cb-card: #1F1F1F;
-      --cb-text: #F5F5F5;
-      --cb-divider: #2B2B2B;
-      --cb-shadow: 0 6px 18px rgba(0,0,0,.35);
+      --cb-bg:#121212; --cb-card:#1F1F1F; --cb-text:#F5F5F5; --cb-divider:#2B2B2B;
+      --cb-shadow:0 6px 18px rgba(0,0,0,.35);
     }
-
-    body{
-      background: var(--cb-bg);
-      color: var(--cb-text);
-      font-family: 'Roboto', system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-    }
-    .cb-card{
-      background: var(--cb-card);
-      border: 1px solid var(--cb-divider);
-      border-radius: var(--cb-rounded);
-      box-shadow: var(--cb-shadow);
-    }
-    .cb-badge{
-      background: color-mix(in oklab, var(--cb-gold) 18%, transparent);
-      border: 1px solid color-mix(in oklab, var(--cb-gold) 45%, var(--cb-card));
-      color: var(--cb-text);
-      font-weight: 600;
-    }
-    .cb-logo{
-      width: 26px; height: 26px; margin-right: .5rem;
-    }
-    .cb-btn-yes{
-      background: var(--cb-green); border: none;
-    }
-    .cb-btn-no{
-      background: var(--cb-red); border: none;
-    }
-    .cb-btn-yes,.cb-btn-no{
-      color:#fff; font-weight:600; border-radius: 12px;
-    }
-    .cb-meta{ color: var(--cb-muted); font-size:.95rem }
-    .cb-table th{ color: var(--cb-muted); font-weight:600 }
-    .cb-sticky{
-      position: sticky; top: .75rem; z-index: 2;
-    }
-    .cb-unit{
-      display:inline-flex; align-items:center; gap:.35rem;
-      padding:.25rem .6rem; border-radius: 999px;
-      background: color-mix(in oklab, var(--cb-gold) 18%, transparent);
-      border: 1px solid color-mix(in oklab, var(--cb-gold) 45%, var(--cb-card));
-      font-weight:600;
-    }
-    .cb-pill{
-      background: color-mix(in oklab, var(--cb-card) 80%, var(--cb-gold));
-      border: 1px solid var(--cb-divider);
-      border-radius: 999px; padding:.2rem .6rem; font-weight:600;
-    }
-    .cb-carousel .carousel-item > .cb-card{ width: 88%; }
-    @media (min-width: 576px){
-      .cb-carousel .carousel-item > .cb-card{ width: 60%; }
-    }
+    body{background:var(--cb-bg);color:var(--cb-text);font-family:'Roboto',system-ui,-apple-system,"Segoe UI",Arial,sans-serif;}
+    .cb-card{background:var(--cb-card);border:1px solid var(--cb-divider);border-radius:var(--cb-rounded);box-shadow:var(--cb-shadow);}
+    .cb-badge{background:color-mix(in oklab, var(--cb-gold) 18%, transparent);border:1px solid color-mix(in oklab, var(--cb-gold) 45%, var(--cb-card));color:var(--cb-text);font-weight:600;}
+    .cb-logo{width:26px;height:26px;margin-right:.5rem;}
+    .cb-btn-yes{background:var(--cb-green);border:none;color:#fff;font-weight:600;border-radius:12px;}
+    .cb-btn-no{background:var(--cb-red);border:none;color:#fff;font-weight:600;border-radius:12px;}
+    .cb-meta{color:var(--cb-muted);font-size:.95rem}
+    .cb-table th{color:var(--cb-muted);font-weight:600}
+    .cb-sticky{position:sticky;top:.75rem;z-index:2;}
+    .cb-unit{display:inline-flex;align-items:center;gap:.35rem;padding:.25rem .6rem;border-radius:999px;background:color-mix(in oklab, var(--cb-gold) 18%, transparent);border:1px solid color-mix(in oklab, var(--cb-gold) 45%, var(--cb-card));font-weight:600;}
+    .cb-pill{background:color-mix(in oklab, var(--cb-card) 80%, var(--cb-gold));border:1px solid var(--cb-divider);border-radius:999px;padding:.2rem .6rem;font-weight:600;}
+    .cb-carousel .carousel-item > .cb-card{width:88%} @media (min-width:576px){.cb-carousel .carousel-item > .cb-card{width:60%}}
   </style>
 </head>
 <body>
-
   <!-- Top Nav -->
-  <nav class="navbar bg-body-tertiary border-bottom sticky-top" style="border-color: var(--cb-divider) !important;">
+  <nav class="navbar bg-body-tertiary border-bottom sticky-top" style="border-color:var(--cb-divider)!important;">
     <div class="container-fluid">
       <div class="d-flex align-items-center">
-        <!-- Inline SVG skillet + cornbread icon -->
+        <!-- skillet + cornbread icon -->
         <svg class="cb-logo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M10 40c0 9 10 14 22 14s22-5 22-14-10-14-22-14-22 5-22 14Z" fill="#2C2C2C"/>
           <rect x="19" y="18" rx="8" ry="8" width="26" height="22" fill="#E2B400" />
@@ -106,7 +55,6 @@
         </svg>
         <span class="navbar-brand mb-0 h5">Cornbread</span>
       </div>
-
       <div class="d-flex align-items-center gap-2">
         <button id="themeToggle" class="btn btn-sm btn-outline-secondary">Dark</button>
         <ul class="nav nav-underline small d-none d-sm-flex">
@@ -119,29 +67,35 @@
   </nav>
 
   <main class="container py-3 pb-5">
-
-    <!-- TOP PICK (sticky) -->
+    <!-- TOP PICK: UPDATED GEORGIA NUMBERS -->
     <section class="cb-sticky">
       <div class="cb-card p-3">
         <div class="d-flex align-items-center justify-content-between mb-2">
           <div class="badge cb-badge text-dark d-flex align-items-center gap-1">
-            <span>🌽🍞</span> <span>Pick of the Week</span>
+            <span>🌽🍞</span><span>Pick of the Week</span>
           </div>
           <span class="cb-unit" title="Units"><span>🍞🍞🍞🍞</span><span>4u</span></span>
         </div>
 
         <h5 class="mb-1">Georgia @ Mississippi State</h5>
         <div class="cb-meta mb-2">
-          Edge <strong>+1.2</strong> • Confidence <strong>78</strong> • Total Lean <strong>Under 53</strong>
+          Edge <strong>+3.0</strong> • Confidence <strong>82</strong> • Total Lean <strong>Under 53</strong>
         </div>
 
-        <div class="display-6 fw-bold">UGA 31–17</div>
-        <div class="cb-meta mt-1">Efficiency +1.1 YPP • Red Zone +17 pts • Havoc +5%</div>
+        <div class="display-6 fw-bold">UGA 31–14</div>
+        <div class="cb-meta mt-1">
+          Efficiency <strong>+1.3 YPP</strong> • Red Zone <strong>+21 pts</strong> • Havoc <strong>+6.1%</strong>
+        </div>
         <p class="mb-3 fst-italic">“Big plate, extra gravy.”</p>
 
         <div class="d-flex gap-2">
-          <button class="btn cb-btn-yes flex-fill py-2" id="btnYes">👍 Heck Yeah <span class="ms-1" id="yesPct">62%</span></button>
-          <button class="btn cb-btn-no flex-fill py-2" id="btnNo">👎 Bless His Heart <span class="ms-1" id="noPct">38%</span></button>
+          <button class="btn cb-btn-yes flex-fill py-2" id="btnYes">👍 Heck Yeah <span class="ms-1" id="yesPct"></span></button>
+          <button class="btn cb-btn-no flex-fill py-2" id="btnNo">👎 Bless His Heart <span class="ms-1" id="noPct"></span></button>
+        </div>
+
+        <!-- quick model context line -->
+        <div class="cb-meta mt-3">
+          Model Line: <strong>UGA −17</strong> vs Market −14 → <strong>Edge +3 pts</strong> • Weighted Total: <strong>86/100</strong>
         </div>
       </div>
     </section>
@@ -155,6 +109,7 @@
 
       <div id="gameCarousel" class="carousel slide cb-carousel" data-bs-ride="false">
         <div class="carousel-inner">
+          <!-- WVU: unchanged from earlier numbers -->
           <div class="carousel-item active">
             <div class="cb-card p-3 mx-auto">
               <div class="d-flex justify-content-between align-items-center">
@@ -169,13 +124,14 @@
             </div>
           </div>
 
+          <!-- BYU: UPDATED NUMBERS -->
           <div class="carousel-item">
             <div class="cb-card p-3 mx-auto">
               <div class="d-flex justify-content-between align-items-center">
                 <h6 class="mb-0">BYU vs Texas Tech</h6>
                 <span class="cb-unit"><span>🍞🍞</span><span>2u</span></span>
               </div>
-              <div class="cb-meta mt-1">Edge <strong>-2.5</strong> • Conf <strong>72</strong></div>
+              <div class="cb-meta mt-1">Edge <strong>+2.5</strong> (value BYU) • Conf <strong>72</strong></div>
               <div class="mt-2">
                 Lean: <strong>Over 53.5</strong><br/>
                 <span class="cb-meta">TTU 34–27 — “Tempo &amp; volatility.”</span>
@@ -191,7 +147,7 @@
       </div>
     </section>
 
-    <!-- RANKING TABLE -->
+    <!-- RANKING TABLE: UPDATED GEORGIA & BYU -->
     <section class="mt-3" id="ranking">
       <div class="cb-card p-3">
         <div class="d-flex align-items-center justify-content-between mb-2">
@@ -201,19 +157,17 @@
         <div class="table-responsive">
           <table class="table table-sm align-middle mb-0 cb-table">
             <thead>
-              <tr>
-                <th>Game</th><th>Edge</th><th>Conf</th><th>Pick</th><th>Lean</th>
-              </tr>
+              <tr><th>Game</th><th>Edge</th><th>Conf</th><th>Pick</th><th>Lean</th></tr>
             </thead>
             <tbody>
               <tr>
-                <td>Georgia @ Miss St</td><td>+1.2</td><td>78</td><td>UGA -14</td><td>Under 53</td>
+                <td>Georgia @ Miss St</td><td><strong>+3.0</strong></td><td><strong>82</strong></td><td>UGA −14</td><td>Under 53</td>
               </tr>
               <tr>
-                <td>WVU vs Colorado</td><td>+1.8</td><td>79</td><td>WVU -6.5</td><td>Under 56.5</td>
+                <td>WVU vs Colorado</td><td>+1.8</td><td>79</td><td>WVU −6.5</td><td>Under 56.5</td>
               </tr>
               <tr>
-                <td>BYU vs Texas Tech</td><td>-2.5</td><td>72</td><td>BYU +9.5</td><td>Over 53.5</td>
+                <td>BYU vs Texas Tech</td><td><strong>+2.5</strong></td><td>72</td><td>BYU +9.5</td><td>Over 53.5</td>
               </tr>
             </tbody>
           </table>
@@ -221,7 +175,7 @@
       </div>
     </section>
 
-    <!-- RECORD SECTION -->
+    <!-- RECORD (kept simple) -->
     <section class="mt-3" id="record">
       <div class="cb-card p-3">
         <div class="d-flex justify-content-between align-items-center">
@@ -231,22 +185,21 @@
         <div class="table-responsive mt-2">
           <table class="table table-sm mb-0">
             <thead>
-            <tr><th>Week</th><th>Pick</th><th>Label</th><th>Units</th><th>Result</th><th>Crowd %</th></tr>
+              <tr><th>Week</th><th>Pick</th><th>Label</th><th>Units</th><th>Result</th><th>Crowd %</th></tr>
             </thead>
             <tbody>
-              <tr><td>11</td><td>UGA -14</td><td>🌽🍞</td><td>4</td><td>—</td><td>62%</td></tr>
-              <tr><td>11</td><td>WVU -6.5</td><td>Official</td><td>3</td><td>—</td><td>58%</td></tr>
+              <tr><td>11</td><td>UGA −14</td><td>🌽🍞</td><td>4</td><td>—</td><td>62%</td></tr>
+              <tr><td>11</td><td>WVU −6.5</td><td>Official</td><td>3</td><td>—</td><td>58%</td></tr>
               <tr><td>11</td><td>BYU +9.5</td><td>Lean</td><td>2</td><td>—</td><td>41%</td></tr>
             </tbody>
           </table>
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- Bottom Nav (mobile) -->
-  <nav class="navbar fixed-bottom bg-body-tertiary border-top d-sm-none" style="border-color: var(--cb-divider) !important;">
+  <nav class="navbar fixed-bottom bg-body-tertiary border-top d-sm-none" style="border-color:var(--cb-divider)!important;">
     <div class="container-fluid justify-content-around">
       <a class="btn btn-link" href="#">🌽 Slate</a>
       <a class="btn btn-link" href="#record">📊 Record</a>
@@ -254,51 +207,47 @@
     </div>
   </nav>
 
-  <!-- OFFCANVAS: MODEL FRAMEWORK -->
-  <div class="offcanvas offcanvas-bottom" tabindex="-1" id="framework" aria-labelledby="frameworkLabel" style="height: 60vh;">
+  <!-- OFFCANVAS: MODEL FRAMEWORK (now includes updated scores) -->
+  <div class="offcanvas offcanvas-bottom" tabindex="-1" id="framework" aria-labelledby="frameworkLabel" style="height:60vh;">
     <div class="offcanvas-header">
       <h5 id="frameworkLabel">Cornbread Model Framework</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body small">
       <div class="row g-3">
-        <div class="col-6 col-sm-4">
-          <div class="cb-card p-3 text-center">
-            <div class="fw-bold">Model Edge</div>
-            <div class="display-6">25%</div>
+        <div class="col-6 col-sm-4"><div class="cb-card p-3 text-center"><div class="fw-bold">Model Edge</div><div class="display-6">25%</div></div></div>
+        <div class="col-6 col-sm-4"><div class="cb-card p-3 text-center"><div class="fw-bold">Confidence</div><div class="display-6">20%</div></div></div>
+        <div class="col-6 col-sm-4"><div class="cb-card p-3 text-center"><div class="fw-bold">Efficiency/EPA</div><div class="display-6">20%</div></div></div>
+        <div class="col-6 col-sm-4"><div class="cb-card p-3 text-center"><div class="fw-bold">Discipline</div><div class="display-6">15%</div></div></div>
+        <div class="col-6 col-sm-4"><div class="cb-card p-3 text-center"><div class="fw-bold">Market Align</div><div class="display-6">10%</div></div></div>
+        <div class="col-6 col-sm-4"><div class="cb-card p-3 text-center"><div class="fw-bold">Context</div><div class="display-6">10%</div></div></div>
+      </div>
+
+      <div class="row g-3 mt-2">
+        <div class="col-12 col-md-6">
+          <div class="cb-card p-3">
+            <div class="fw-bold mb-2">Georgia Framework Scores (Week 11, 2025)</div>
+            <ul class="mb-2">
+              <li>Off Eff: <strong>89</strong> • Def Eff: <strong>91</strong></li>
+              <li>Discipline: <strong>92</strong> • Context: <strong>78</strong></li>
+              <li>Market: <strong>80</strong> • Player Impact: <strong>74</strong></li>
+            </ul>
+            <div class="cb-pill">Weighted Total: <strong>86 / 100</strong></div>
           </div>
         </div>
-        <div class="col-6 col-sm-4">
-          <div class="cb-card p-3 text-center">
-            <div class="fw-bold">Confidence</div>
-            <div class="display-6">20%</div>
-          </div>
-        </div>
-        <div class="col-6 col-sm-4">
-          <div class="cb-card p-3 text-center">
-            <div class="fw-bold">Efficiency/EPA</div>
-            <div class="display-6">20%</div>
-          </div>
-        </div>
-        <div class="col-6 col-sm-4">
-          <div class="cb-card p-3 text-center">
-            <div class="fw-bold">Discipline</div>
-            <div class="display-6">15%</div>
-          </div>
-        </div>
-        <div class="col-6 col-sm-4">
-          <div class="cb-card p-3 text-center">
-            <div class="fw-bold">Market Align</div>
-            <div class="display-6">10%</div>
-          </div>
-        </div>
-        <div class="col-6 col-sm-4">
-          <div class="cb-card p-3 text-center">
-            <div class="fw-bold">Context</div>
-            <div class="display-6">10%</div>
+        <div class="col-12 col-md-6">
+          <div class="cb-card p-3">
+            <div class="fw-bold mb-2">BYU Framework Scores (Week 11, 2025)</div>
+            <ul class="mb-2">
+              <li>Off Eff: <strong>80</strong> • Def Eff: <strong>78</strong></li>
+              <li>Discipline: <strong>75</strong> • Context: <strong>72</strong></li>
+              <li>Market: <strong>77</strong> • Player Impact: <strong>70</strong></li>
+            </ul>
+            <div class="cb-pill">Weighted Total: <strong>68 / 100</strong></div>
           </div>
         </div>
       </div>
+
       <p class="mt-3 mb-0">Weights rank each noon kickoff by edge quality and reliability.</p>
     </div>
   </div>
@@ -310,36 +259,25 @@
   <script>
     // Light/Dark toggle
     const toggleBtn = document.getElementById('themeToggle');
-    const root = document.documentElement;
     toggleBtn?.addEventListener('click', () => {
       const current = document.documentElement.getAttribute('data-bs-theme') || 'light';
       const next = current === 'light' ? 'dark' : 'light';
       document.documentElement.setAttribute('data-bs-theme', next);
       toggleBtn.textContent = next === 'light' ? 'Dark' : 'Light';
-      // persist
       localStorage.setItem('cb-theme', next);
     });
-    // restore theme
     const saved = localStorage.getItem('cb-theme');
-    if (saved) {
-      document.documentElement.setAttribute('data-bs-theme', saved);
-      toggleBtn.textContent = saved === 'light' ? 'Dark' : 'Light';
-    }
+    if (saved) { document.documentElement.setAttribute('data-bs-theme', saved); toggleBtn.textContent = saved === 'light' ? 'Dark' : 'Light'; }
 
     // Simple local vote demo (client-side only)
     let yes = 62, no = 38;
     const yesBtn = document.getElementById('btnYes');
     const noBtn  = document.getElementById('btnNo');
     const yesPct = document.getElementById('yesPct');
-    const noPct = document.getElementById('noPct');
-
-    function renderVote(){
-      const total = yes + no;
-      yesPct.textContent = Math.round((yes/total)*100) + '%';
-      noPct.textContent  = Math.round((no/total)*100) + '%';
-    }
+    const noPct  = document.getElementById('noPct');
+    function renderVote(){ const total = yes + no; yesPct.textContent = Math.round((yes/total)*100)+'%'; noPct.textContent = Math.round((no/total)*100)+'%'; }
     yesBtn?.addEventListener('click', ()=>{ yes+=1; renderVote(); });
-    noBtn?.addEventListener('click',  ()=>{ no+=1; renderVote(); });
+    noBtn ?.addEventListener('click', ()=>{ no +=1; renderVote(); });
   </script>
 </body>
 </html>
