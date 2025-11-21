@@ -1,241 +1,222 @@
 <!doctype html>
 <html lang="en" data-bs-theme="light">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cornbread — Noon Slate (Updated Top Pick Metrics)</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>🌽🍞 Cornbread Model — Week 12 Noon Slate</title>
 
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-
-  <!-- Roboto / Open Sans -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --cb-bg:#FAFAFA; --cb-card:#FFFFFF; --cb-text:#2C2C2C;
-      --cb-divider:#DADADA; --cb-gold:#E2B400; --cb-green:#3BAA5C; --cb-red:#C04848;
-      --cb-muted:#6B7280; --cb-shadow:0 6px 18px rgba(0,0,0,.06); --cb-rounded:18px;
-    }
-    [data-bs-theme="dark"]{
-      --cb-bg:#121212; --cb-card:#1F1F1F; --cb-text:#F5F5F5; --cb-divider:#2B2B2B;
-      --cb-shadow:0 6px 18px rgba(0,0,0,.35);
-    }
-    body{background:var(--cb-bg);color:var(--cb-text);font-family:'Roboto',system-ui,-apple-system,"Segoe UI",Arial,sans-serif;}
-    .cb-card{background:var(--cb-card);border:1px solid var(--cb-divider);border-radius:var(--cb-rounded);box-shadow:var(--cb-shadow);}
-    .cb-badge{background:color-mix(in oklab, var(--cb-gold) 18%, transparent);border:1px solid color-mix(in oklab, var(--cb-gold) 45%, var(--cb-card));color:var(--cb-text);font-weight:600;}
-    .cb-logo{width:26px;height:26px;margin-right:.5rem;}
-    .cb-btn-yes{background:var(--cb-green);border:none;color:#fff;font-weight:600;border-radius:12px;}
-    .cb-btn-no{background:var(--cb-red);border:none;color:#fff;font-weight:600;border-radius:12px;}
-    .cb-meta{color:var(--cb-muted);font-size:.95rem}
-    .cb-table th{color:var(--cb-muted);font-weight:600}
-    .cb-sticky{position:sticky;top:.75rem;z-index:2;}
-    .cb-unit{display:inline-flex;align-items:center;gap:.35rem;padding:.25rem .6rem;border-radius:999px;background:color-mix(in oklab, var(--cb-gold) 18%, transparent);border:1px solid color-mix(in oklab, var(--cb-gold) 45%, var(--cb-card));font-weight:600;}
-    .cb-pill{background:color-mix(in oklab, var(--cb-card) 80%, var(--cb-gold));border:1px solid var(--cb-divider);border-radius:999px;padding:.2rem .6rem;font-weight:600;}
-    .cb-carousel .carousel-item > .cb-card{width:88%} @media (min-width:576px){.cb-carousel .carousel-item > .cb-card{width:60%}}
-  </style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --cb-bg:#FAFAFA;--cb-card:#FFFFFF;--cb-text:#2C2C2C;
+  --cb-divider:#DADADA;--cb-gold:#E2B400;--cb-green:#3BAA5C;--cb-red:#C04848;
+  --cb-muted:#6B7280;--cb-shadow:0 6px 18px rgba(0,0,0,.06);--cb-rounded:18px;
+}
+[data-bs-theme="dark"]{
+  --cb-bg:#121212;--cb-card:#1F1F1F;--cb-text:#F5F5F5;--cb-divider:#2B2B2B;
+  --cb-shadow:0 6px 18px rgba(0,0,0,.35);
+}
+body{background:var(--cb-bg);color:var(--cb-text);font-family:'Roboto',sans-serif;}
+.cb-card{background:var(--cb-card);border:1px solid var(--cb-divider);border-radius:var(--cb-rounded);box-shadow:var(--cb-shadow);}
+.cb-meta{color:var(--cb-muted);font-size:.95rem}
+.cb-badge{background:color-mix(in oklab,var(--cb-gold) 20%,transparent);border-radius:12px;padding:.2rem .6rem;font-weight:600;}
+.cb-pill{background:color-mix(in oklab,var(--cb-card) 80%,var(--cb-gold));border:1px solid var(--cb-divider);border-radius:999px;padding:.2rem .6rem;font-weight:600;}
+.table th{color:var(--cb-muted)}
+</style>
 </head>
 <body>
-  <!-- Top Nav -->
-  <nav class="navbar bg-body-tertiary border-bottom sticky-top" style="border-color:var(--cb-divider)!important;">
-    <div class="container-fluid">
-      <div class="d-flex align-items-center">
-        <!-- skillet + cornbread icon -->
-       
-        <span class="navbar-brand mb-0 h5">🌽🍞 Cornbread</span>
-      </div>
-      <div class="d-flex align-items-center gap-2">
-        <button id="themeToggle" class="btn btn-sm btn-outline-secondary">Dark</button>
-      </div>
-    </div>
-  </nav>
 
-  <main class="container py-3 pb-5">
+<nav class="navbar bg-body-tertiary border-bottom sticky-top">
+  <div class="container-fluid">
+    <h5 class="mb-0">🌽🍞 Cornbread Model — Week 12 Noon Slate</h5>
+    <button id="themeToggle" class="btn btn-sm btn-outline-secondary">Dark</button>
+  </div>
+</nav>
 
-    <!-- ✅ TOP PICK (Georgia) WITH METRICS & DERIVED INSIGHTS -->
-    <section class="cb-sticky">
-      <div class="cb-card p-3">
-        <div class="d-flex align-items-center justify-content-between mb-2">
-          <div class="badge cb-badge text-dark d-flex align-items-center gap-1">
-            <span>🌽🍞</span><span>Pick of the Week</span>
-          </div>
-          <span class="cb-unit" title="Units"><span>🍞🍞🍞🍞</span><span>4u</span></span>
-        </div>
+<main class="container py-3 pb-5">
 
-        <h5 class="mb-1">Georgia @ Mississippi State</h5>
-        <div class="cb-meta mb-2">
-          Edge <strong>+3.0</strong> • Confidence <strong>82</strong> • Total Lean <strong>Under 53</strong>
-        </div>
+<!-- Miami vs VT -->
+<div class="cb-card p-3 mb-4">
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <div class="cb-badge">🌽🍞 Strong Favorite Edge</div>
+    <div class="cb-pill">Miami –18 | Total 48.5</div>
+  </div>
+  <h5>Miami vs Virginia Tech — Saturday 12 PM ET</h5>
 
-        <div class="display-6 fw-bold">UGA 31–14</div>
-        <div class="cb-meta mt-1">
-          Efficiency <strong>+1.3 YPP</strong> • Red Zone <strong>+21 pts</strong> • Havoc <strong>+6.1%</strong>
-        </div>
-        <p class="mb-3 fst-italic">“Big plate, extra gravy.”</p>
+  <h6 class="mt-3">1️⃣ Core Metrics (Per Game)</h6>
+  <div class="table-responsive">
+    <table class="table table-sm">
+      <thead><tr><th>Metric</th><th>Miami</th><th>VT</th></tr></thead>
+      <tbody>
+        <tr><td>Record</td><td>8–2</td><td>3–7</td></tr>
+        <tr><td>Points For / Allowed</td><td>32.7 / 18.2</td><td>20.4 / 32.8</td></tr>
+        <tr><td>Yards/Game Off / Def</td><td>421 / 298</td><td>348 / 412</td></tr>
+        <tr><td>Yards/Play Off / Def</td><td>6.4 / 4.8</td><td>5.1 / 6.2</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cb-meta">Miami wins every core category — VT defense bottom-tier (32.8 ppg allowed).</p>
 
-        <div class="d-flex gap-2 mb-2">
-          <button class="btn cb-btn-yes flex-fill py-2" id="btnYes">👍 Heck Yeah <span class="ms-1" id="yesPct"></span></button>
-          <button class="btn cb-btn-no flex-fill py-2" id="btnNo">👎 Bless His Heart <span class="ms-1" id="noPct"></span></button>
-        </div>
+  <h6 class="mt-3">2️⃣ Situational Metrics</h6>
+  <p class="fw-semibold mb-1">Third & Fourth Down</p>
+  <div class="table-responsive">
+    <table class="table table-sm">
+      <thead><tr><th>Metric</th><th>Miami</th><th>VT</th></tr></thead>
+      <tbody>
+        <tr><td>3rd Down Offense</td><td>45%</td><td>36%</td></tr>
+        <tr><td>3rd Down Defense</td><td>31%</td><td>43%</td></tr>
+        <tr><td>4th Down Offense</td><td>63%</td><td>52%</td></tr>
+        <tr><td>4th Down Defense</td><td>38%</td><td>58%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cb-meta">Drive Efficiency Edge: Miami by a mile.</p>
 
-        <!-- Projection + model line -->
-        <div class="cb-meta mt-1 mb-2">
-          Predicted: <strong>Georgia 31 – Mississippi State 14</strong> • Model Line: <strong>UGA −17</strong> vs Market −14 → <strong>Edge +3 pts</strong> • Weighted Total: <strong>86/100</strong>
-        </div>
+  <p class="fw-semibold mb-1 mt-2">Red Zone</p>
+  <div class="table-responsive">
+    <table class="table table-sm">
+      <thead><tr><th>Metric</th><th>Miami</th><th>VT</th></tr></thead>
+      <tbody>
+        <tr><td>RZ Off Score %</td><td>92%</td><td>76%</td></tr>
+        <tr><td>RZ Def Allowed %</td><td>73%</td><td>88%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cb-meta">Finishing Drives: Miami  |  Stopping Drives: Miami (big edge)</p>
 
-        <!-- Accordion: Metrics & Insights -->
-        <div class="accordion" id="ugaAccordion">
-          <!-- Core Team Data -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="coreHead">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#coreData" aria-expanded="true" aria-controls="coreData">
-                📊 Core Team Data (Per-Game Averages)
-              </button>
-            </h2>
-            <div id="coreData" class="accordion-collapse collapse show" aria-labelledby="coreHead" data-bs-parent="#ugaAccordion">
-              <div class="accordion-body p-0">
-                <div class="table-responsive">
-                  <table class="table table-sm mb-0">
-                    <thead>
-                      <tr><th>Category</th><th>Georgia</th><th>Miss State</th><th class="d-none d-md-table-cell">Context</th></tr>
-                    </thead>
-                    <tbody>
-                      <tr><td>Yards per Play (YPP)</td><td><strong>6.7</strong></td><td>5.4</td><td class="d-none d-md-table-cell">UGA +1.3 YPP edge</td></tr>
-                      <tr><td>Points per Game</td><td><strong>31.8</strong></td><td>19.6</td><td class="d-none d-md-table-cell">Scoring efficiency advantage</td></tr>
-                      <tr><td>Points Allowed / Game</td><td><strong>14.2</strong></td><td>26.4</td><td class="d-none d-md-table-cell">Top-15 scoring D</td></tr>
-                      <tr><td>3rd-Down Conversion</td><td><strong>46.1%</strong></td><td>37.5%</td><td class="d-none d-md-table-cell">Sustains drives</td></tr>
-                      <tr><td>Opp 3rd-Down Conversion</td><td><strong>31.9%</strong></td><td>42.6%</td><td class="d-none d-md-table-cell">Money-down defense</td></tr>
-                      <tr><td>Red-Zone TD %</td><td><strong>72.0%</strong></td><td>58.0%</td><td class="d-none d-md-table-cell">Finishing drives</td></tr>
-                      <tr><td>Opp Red-Zone TD %</td><td><strong>51.0%</strong></td><td>68.5%</td><td class="d-none d-md-table-cell">Better goal-line D</td></tr>
-                      <tr><td>Turnover Margin (per game)</td><td><strong>+0.5</strong></td><td>−0.3</td><td class="d-none d-md-table-cell">Cleaner team</td></tr>
-                      <tr><td>Penalty Yards (per game)</td><td><strong>45.8</strong></td><td>65.9</td><td class="d-none d-md-table-cell">Hidden yards edge</td></tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
+  <p class="fw-semibold mb-1 mt-2">Turnovers / Havoc</p>
+  <div class="table-responsive">
+    <table class="table table-sm">
+      <thead><tr><th>Metric</th><th>Miami</th><th>VT</th></tr></thead>
+      <tbody>
+        <tr><td>Turnover Margin</td><td>+6</td><td>–4</td></tr>
+        <tr><td>Takeaways/Game</td><td>1.7</td><td>1.2</td></tr>
+        <tr><td>Giveaways/Game</td><td>0.9</td><td>1.6</td></tr>
+        <tr><td>Def Havoc Rank</td><td>Top 30</td><td>Bottom 40</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-          <!-- Derived Metrics & Insights -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="derivedHead">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#derivedData" aria-expanded="false" aria-controls="derivedData">
-                🧠 Derived Metrics & Key Insights
-              </button>
-            </h2>
-            <div id="derivedData" class="accordion-collapse collapse" aria-labelledby="derivedHead" data-bs-parent="#ugaAccordion">
-              <div class="accordion-body">
-                <div class="table-responsive mb-3">
-                  <table class="table table-sm mb-0">
-                    <thead>
-                      <tr><th>Metric</th><th>Georgia</th><th>Miss St</th><th>Edge / Insight</th></tr>
-                    </thead>
-                    <tbody>
-                      <tr><td>Efficiency Diff (YPP Off−Def)</td><td><strong>+1.3</strong></td><td>−0.6</td><td><strong>UGA +1.9 YPP</strong></td></tr>
-                      <tr><td>Explosiveness Edge (20+ plays/g)</td><td><strong>6.8</strong></td><td>4.7</td><td>More chunk gains</td></tr>
-                      <tr><td>Red Zone Index (O − D)</td><td><strong>+21 pts</strong></td><td>−10 pts</td><td>Major finishing gap</td></tr>
-                      <tr><td>3rd-Down Swing</td><td><strong>+14.2 pts</strong></td><td>−5.1 pts</td><td>Possession extension</td></tr>
-                      <tr><td>Discipline Index</td><td><strong>+0.8σ</strong></td><td>−0.9σ</td><td>Much cleaner</td></tr>
-                      <tr><td>Havoc Rate Diff</td><td><strong>+6.1%</strong></td><td>−2.8%</td><td>More disruption</td></tr>
-                    </tbody>
-                  </table>
-                </div>
+  <h6 class="mt-3">3️⃣ Derived Metrics</h6>
+  <div class="table-responsive">
+    <table class="table table-sm">
+      <thead><tr><th>Derived Metric</th><th>Edge</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>YPP Differential</td><td>Miami</td><td>+1.3 YPP</td></tr>
+        <tr><td>3rd Down Differential</td><td>Miami</td><td>+14% swing</td></tr>
+        <tr><td>Red Zone Differential</td><td>Miami</td><td>+31% finish adv.</td></tr>
+        <tr><td>Havoc Index</td><td>Miami</td><td>Better security + pressure</td></tr>
+        <tr><td>Explosiveness</td><td>Miami</td><td>Higher YPA & YPR</td></tr>
+        <tr><td>Discipline</td><td>Miami</td><td>Fewer penalties</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-                <ul class="mb-0">
-                  <li>Balanced profile: top-20 YPP, top-15 defensive success, positive TO margin.</li>
-                  <li>Miss State offense unlikely to sustain drives vs UGA money-down defense.</li>
-                  <li>Game state favors late UGA pull-away; total leans <strong>Under 53</strong> (tempo + RZ matchup).</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div><!-- /accordion -->
-      </div>
-    </section>
+  <h6 class="mt-3">4️⃣ Model Output</h6>
+  <ul>
+    <li><strong>Projected Spread:</strong> Miami –23.5 (vs Market –18)</li>
+    <li><strong>Model Edge:</strong> +5.5 points of value</li>
+    <li><strong>Projected Final:</strong> Miami 41 – VT 17</li>
+    <li><strong>Confidence:</strong> 74 / 100</li>
+    <li><strong>Play:</strong> Miami –18  |  <strong>Lean:</strong> Over 48.5</li>
+  </ul>
+  <p class="cb-meta"><em>Miami’s dominance across defense, red zone, explosiveness, turnovers, and discipline makes this a multi-score edge unless complacency sets in.</em></p>
+</div>
 
-    <!-- (Keep your other sections below as-is; shown abbreviated) -->
-    <section class="mt-3">
-      <div class="d-flex align-items-center justify-content-between mb-2">
-        <h6 class="mb-0">Official &amp; Lean Picks</h6>
-        <span class="cb-pill">Noon ET</span>
-      </div>
-      <div id="gameCarousel" class="carousel slide cb-carousel" data-bs-ride="false">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="cb-card p-3 mx-auto">
-              <div class="d-flex justify-content-between align-items-center">
-                <h6 class="mb-0">WVU vs Colorado</h6>
-                <span class="cb-unit"><span>🍞🍞🍞</span><span>3u</span></span>
-              </div>
-              <div class="cb-meta mt-1">Edge <strong>+1.8</strong> • Conf <strong>79</strong></div>
-              <div class="mt-2">Lean: <strong>Under 56.5</strong><br/><span class="cb-meta">WVU 28–20 — “Home-field &amp; havoc.”</span></div>
-            </div>
-          </div>
+<!-- Missouri vs Oklahoma -->
+<div class="cb-card p-3">
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <div class="cb-badge">🌽🍞 Solid Favorite Edge</div>
+    <div class="cb-pill">OU –6.5 | Total 42.5</div>
+  </div>
+  <h5>Missouri vs Oklahoma — Saturday 12 PM ET</h5>
 
-          <div class="carousel-item">
-            <div class="cb-card p-3 mx-auto">
-              <div class="d-flex justify-content-between align-items-center">
-                <h6 class="mb-0">BYU vs Texas Tech</h6>
-                <span class="cb-unit"><span>🍞🍞</span><span>2u</span></span>
-              </div>
-              <div class="cb-meta mt-1">Edge <strong>+2.5</strong> (value BYU) • Conf <strong>72</strong></div>
-              <div class="mt-2">Lean: <strong>Over 53.5</strong><br/><span class="cb-meta">TTU 34–27 — “Tempo &amp; volatility.”</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex justify-content-center gap-2 mt-2">
-          <button class="btn btn-sm btn-outline-secondary px-3" data-bs-target="#gameCarousel" data-bs-slide="prev">‹</button>
-          <button class="btn btn-sm btn-outline-secondary px-3" data-bs-target="#gameCarousel" data-bs-slide="next">›</button>
-        </div>
-      </div>
-    </section>
+  <h6 class="mt-3">1️⃣ Core Metrics (Per Game)</h6>
+  <div class="table-responsive">
+    <table class="table table-sm">
+      <thead><tr><th>Metric</th><th>Mizzou</th><th>OU</th></tr></thead>
+      <tbody>
+        <tr><td>Record</td><td>7–3</td><td>8–2</td></tr>
+        <tr><td>Points For / Allowed</td><td>26.1 / 20.9</td><td>31.8 / 17.2</td></tr>
+        <tr><td>Yards/Game Off / Def</td><td>378 / 334</td><td>404 / 298</td></tr>
+        <tr><td>Yards/Play Off / Def</td><td>5.7 / 5.3</td><td>6.3 / 4.8</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cb-meta">OU stronger both sides — better offense and defense.</p>
 
-    <section class="mt-3" id="ranking">
-      <div class="cb-card p-3">
-        <div class="d-flex align-items-center justify-content-between mb-2">
-          <h6 class="mb-0">Ranking (Noon Slate)</h6>
-          <span class="cb-meta">Georgia +3.0 • WVU +1.8 • BYU +2.5</span>
-        </div>
-        <div class="table-responsive">
-          <table class="table table-sm align-middle mb-0 cb-table">
-            <thead><tr><th>Game</th><th>Edge</th><th>Conf</th><th>Pick</th><th>Lean</th></tr></thead>
-            <tbody>
-              <tr><td>Georgia @ Miss St</td><td><strong>+3.0</strong></td><td><strong>82</strong></td><td>UGA −14</td><td>Under 53</td></tr>
-              <tr><td>WVU vs Colorado</td><td>+1.8</td><td>79</td><td>WVU −6.5</td><td>Under 56.5</td></tr>
-              <tr><td>BYU vs Texas Tech</td><td><strong>+2.5</strong></td><td>72</td><td>BYU +9.5</td><td>Over 53.5</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
+  <h6 class="mt-3">2️⃣ Situational Metrics</h6>
+  <p class="fw-semibold mb-1">Third & Fourth Down</p>
+  <div class="table-responsive">
+    <table class="table table-sm">
+      <thead><tr><th>Metric</th><th>Mizzou</th><th>OU</th></tr></thead>
+      <tbody>
+        <tr><td>3rd Down Offense</td><td>41%</td><td>46%</td></tr>
+        <tr><td>3rd Down Defense</td><td>39%</td><td>33%</td></tr>
+        <tr><td>4th Down Offense</td><td>55%</td><td>58%</td></tr>
+        <tr><td>4th Down Defense</td><td>53%</td><td>41%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cb-meta">Drive Efficiency Edge: Oklahoma.</p>
 
-  </main>
+  <p class="fw-semibold mb-1 mt-2">Red Zone</p>
+  <div class="table-responsive">
+    <table class="table table-sm">
+      <thead><tr><th>Metric</th><th>Mizzou</th><th>OU</th></tr></thead>
+      <tbody>
+        <tr><td>RZ Off Score %</td><td>86%</td><td>92%</td></tr>
+        <tr><td>RZ Def Allowed %</td><td>79%</td><td>68%</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Light/Dark toggle
-    const toggleBtn = document.getElementById('themeToggle');
-    toggleBtn?.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-bs-theme') || 'light';
-      const next = current === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-bs-theme', next);
-      toggleBtn.textContent = next === 'light' ? 'Dark' : 'Light';
-      localStorage.setItem('cb-theme', next);
-    });
-    const saved = localStorage.getItem('cb-theme');
-    if (saved) { document.documentElement.setAttribute('data-bs-theme', saved); toggleBtn.textContent = saved === 'light' ? 'Dark' : 'Light'; }
+  <p class="fw-semibold mb-1 mt-2">Turnovers / Havoc</p>
+  <div class="table-responsive">
+    <table class="table table-sm">
+      <thead><tr><th>Metric</th><th>Mizzou</th><th>OU</th></tr></thead>
+      <tbody>
+        <tr><td>Turnover Margin</td><td>+2</td><td>+8</td></tr>
+        <tr><td>Takeaways/Game</td><td>1.3</td><td>2.0</td></tr>
+        <tr><td>Giveaways/Game</td><td>0.9</td><td>1.2</td></tr>
+        <tr><td>Havoc Created</td><td>Mid</td><td>High</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-    // Simple local vote demo (client-side only)
-    let yes = 62, no = 38;
-    const yesBtn = document.getElementById('btnYes');
-    const noBtn  = document.getElementById('btnNo');
-    const yesPct = document.getElementById('yesPct');
-    const noPct  = document.getElementById('noPct');
-    function renderVote(){ const t = yes + no; yesPct.textContent = Math.round(yes/t*100)+'%'; noPct.textContent = Math.round(no/t*100)+'%'; }
-    yesBtn?.addEventListener('click', ()=>{ yes+=1; renderVote(); });
-    noBtn ?.addEventListener('click', ()=>{ no +=1; renderVote(); });
-  </script>
+  <h6 class="mt-3">3️⃣ Derived Metrics</h6>
+  <div class="table-responsive">
+    <table class="table table-sm">
+      <thead><tr><th>Derived Metric</th><th>Edge</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>YPP Differential</td><td>OU</td><td>+0.5 YPP + better defense</td></tr>
+        <tr><td>3rd Down Differential</td><td>OU</td><td>+7% swing</td></tr>
+        <tr><td>Red Zone Differential</td><td>OU</td><td>+11%</td></tr>
+        <tr><td>Havoc Index</td><td>OU</td><td>Higher takeaways</td></tr>
+        <tr><td>Explosiveness</td><td>OU</td><td>Bigger pass chunk rate</td></tr>
+        <tr><td>Discipline</td><td>Push</td><td>Comparable</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h6 class="mt-3">4️⃣ Model Output</h6>
+  <ul>
+    <li><strong>Projected Spread:</strong> OU –10 to –11 (vs Market –6.5)</li>
+    <li><strong>Model Edge:</strong> +3.5 to +4.5 points of value</li>
+    <li><strong>Projected Final:</strong> OU 27 – Mizzou 17</li>
+    <li><strong>Confidence:</strong> 71 / 100</li>
+    <li><strong>Play:</strong> OU –6.5  |  <strong>Lean:</strong> Under 42.5</li>
+  </ul>
+  <p class="cb-meta"><em>OU’s disciplined, high-havoc defense and superior passing efficiency point to a comfortable cover in a low-total game.</em></p>
+</div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const btn=document.getElementById('themeToggle');
+btn.addEventListener('click',()=>{const c=document.documentElement.getAttribute('data-bs-theme')||'light';const n=c==='light'?'dark':'light';document.documentElement.setAttribute('data-bs-theme',n);btn.textContent=n==='light'?'Dark':'Light';});
+</script>
 </body>
 </html>
